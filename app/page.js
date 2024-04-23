@@ -22,11 +22,12 @@ const Page = () => {
   const renderStars = () => {
     const stars = [];
     for (let index = 0; index < 5; index++) {
+      console.log(index, selectedValue, hoveredValue);
       stars.push(
         <Start
           key={index}
           value={index + 1}
-          filled={index < hoveredValue}
+          filled={index < selectedValue || index < hoveredValue}
           onClick={handleStarClick}
           onMouseOver={handleStarHover}
           onMouseOut={handleStarMouseOut}
